@@ -41,20 +41,18 @@ test("Create Lead in Salesforce", async () => {
     const sales = page.locator("p[title^='Manage your sales']");
     await expect(sales).toContainText('Manage your sales');
     await page.click("p[title^='Manage your sales']");
-    await page.waitForLoadState('domcontentloaded');
+  
 
     // Click on Leads tab 
     await page.click("text='Leads'");
-    await page.waitForLoadState('domcontentloaded');
 
     //  Click on New button
     await page.waitForSelector('text="New"')
     await page.click('text="New"')
-    await page.waitForLoadState('domcontentloaded');
 
     await page.waitForSelector("[name='Company']");
     // Enter the Last Name
-    await page.getByPlaceholder("Last Name").fill("B");
+    await page.getByPlaceholder("Last Name").fill("Balasundaram");
 
     // Enter the CompanyName 
     await page.fill("[name='Company']", "Cayuse");
